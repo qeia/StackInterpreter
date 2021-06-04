@@ -2,65 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f6e01314-0da9-4af6-a746-692a8f6970d0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_78.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Divide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/GreaterThan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/IntrinsicOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/LessThan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/InputDeclarationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StackInterpreter.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StackInterpreter.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/CodeBlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Compiler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Exceptions/InvalidStackStateException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Exceptions/VariableNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/InputDeclaration.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Internal/OperationParameters.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Internal/OperationsDeque.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Internal/StackContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Internal/VariableContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/IntrinsicOperations/Equal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/IntrinsicOperations/IfTrue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/IntrinsicOperations/IntrinsicOperation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/IntrinsicOperations/PrintLn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/IntrinsicOperations/Subtract.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/IntrinsicOperations/Sum.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/IntrinsicOperations/Times.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/Local.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/Pop.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/Push.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/PushVar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/StackInterpreter/StackOperation/StackOperation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CodeBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/CodeBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/InvalidStackStateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Exceptions/InvalidStackStateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Exceptions/VariableNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Exceptions/VariableNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InputDeclaration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/InputDeclaration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Internal/OperationParameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/OperationParameters.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Internal/OperationsDeque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/OperationsDeque.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Internal/StackContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/StackContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Internal/VariableContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/VariableContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackFunction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/IntrinsicOperations/Equal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Equal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/IntrinsicOperations/IfTrue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/IfTrue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/IntrinsicOperations/IntrinsicOperation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/IntrinsicOperations/PrintLn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/PrintLn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/IntrinsicOperations/Subtract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Subtract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/IntrinsicOperations/Sum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Sum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/IntrinsicOperations/Times.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Times.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/Local.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Local.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/Pop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Pop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/Push.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Push.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/PushVar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/PushVar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StackOperation/StackOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/StackOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/StackContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/StackContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Pop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Pop.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,43 +20,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Times.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Local.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="73" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackFunction.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Subtract.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,10 +44,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Executor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/CodeBlock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="945">
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
+            <state relative-caret-position="-648">
+              <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -154,20 +73,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Exceptions/InvalidStackStateException.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/OperationParameters.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+            <state relative-caret-position="60">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/StackContext.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+            <state relative-caret-position="285">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,6 +99,30 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Push.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Pop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -211,9 +154,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Equal.java" />
-        <option value="$PROJECT_DIR$/src/Sum.java" />
-        <option value="$PROJECT_DIR$/src/Subtract.java" />
         <option value="$PROJECT_DIR$/src/OperationParameters.java" />
         <option value="$PROJECT_DIR$/src/PrintLn.java" />
         <option value="$PROJECT_DIR$/src/Times.java" />
@@ -262,6 +202,9 @@
         <option value="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/PushVar.java" />
         <option value="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Local.java" />
         <option value="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/CodeBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Executor.java" />
+        <option value="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Pop.java" />
+        <option value="$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/StackContext.java" />
       </list>
     </option>
   </component>
@@ -544,22 +487,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -631,26 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Push.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Pop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="65" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/IfTrue.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -678,13 +600,6 @@
     <entry file="file://$PROJECT_DIR$/StackInterpreter.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Executor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/InputDeclarationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -699,13 +614,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -797,13 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/OperationParameters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Equal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -834,16 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/PushVar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Local.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -851,20 +742,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackFunction.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Subtract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/IntrinsicOperations/Subtract.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Exceptions/InvalidStackStateException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="45">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/CodeBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -881,10 +796,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/CodeBlock.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Executor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="270">
+          <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/PushVar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Push.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/StackOperation/Pop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/StackContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -898,20 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Exceptions/InvalidStackStateException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/OperationParameters.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/com/sid/JavaStackInterpreter/Internal/StackContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
