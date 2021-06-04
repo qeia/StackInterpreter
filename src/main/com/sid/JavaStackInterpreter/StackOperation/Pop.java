@@ -6,6 +6,7 @@ import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 import java.util.List;
 
 public class Pop implements StackOperation {
+
     @Override
     public void execute(StackContext st, List params) {
         if(st.size() < 1){
