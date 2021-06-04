@@ -5,16 +5,16 @@ import StackOperation.StackOperation;
 import java.util.List;
 
 public class OperationParameters {
-    public StackOperation op;
+    public StackOperation operation;
     public List params;
 
-    public OperationParameters (StackOperation op, List params){
-        this.op = op;
+    public OperationParameters (StackOperation operation, List params){
+        this.operation = operation;
         this.params = params;
     }
     @Override
     public String toString(){
         String paramString = params == null ?  "null" : params.toString();
-        return "[OP " + op.toString() + " " + paramString + "]";
+        return "[OP " + operation.toString() + " " + paramString + "]";
     }
 }

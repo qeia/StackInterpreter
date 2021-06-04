@@ -1,10 +1,11 @@
 package Internal;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
 public class StackContext extends Stack<Object> {
-    public VariableContext variableContext;
+    private VariableContext variableContext;
 
     public StackContext (VariableContext variableContext){
         this.variableContext = variableContext;
@@ -17,10 +18,22 @@ public class StackContext extends Stack<Object> {
         return variableContext.context.get(variableContext.context.size()-1);
     }
 
+    public void putVariableInMap (String var, Integer value){
+        getLastMap().put(var, value);
+    }
     public void removeLastMap(){
         variableContext.context.remove(variableContext.context.size()-1);
     }
+
     public String toString() {
         return "[ SC " + super.toString() + " " + variableContext.toString() + " ]";
+    }
+
+    public VariableContext getVariableContext() {
+        return variableContext;
+    }
+
+    public void addNewLevel() {
+        variableContext.context.add(new HashMap<>());
     }
 }
