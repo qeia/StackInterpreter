@@ -12,7 +12,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//generic code of a blog
+//generic block of code
+//fluent api
+//operations is a deque that contains tuples of operations vs params
+//executor is a class that executes all the operations on "operations" recursively
 public class CodeBlock {
 
   OperationsDeque operations;
