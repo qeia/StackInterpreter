@@ -3,8 +3,6 @@ package main.com.sid.JavaStackInterpreter.StackOperation.IntrinsicOperations;
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidStackStateException;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 
-
-import java.util.List;
 import java.util.Objects;
 
 public class Equal extends IntrinsicOperation {

@@ -14,8 +14,7 @@ public class StackFunction extends Executor {
     public Object invoke(Integer... values){
         //we clear stack because it might have been full from previous
         this.stack.clear();
-        //addNewLevel because we cleared stack
-        this.stack.addNewLevel();
+
 
         for(int i = 0; i < values.length; i++){
             this.stack.addVariable(initialVariables.get(i), values[i]);

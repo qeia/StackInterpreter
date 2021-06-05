@@ -34,6 +34,8 @@ public class StackContext extends Stack<Object> {
 
     public void clear(){
         super.clear(); variableTracker.clear();
+        //addNewLevel because we cleared stack
+        this.addNewLevel();
     }
 
     public String toString() {

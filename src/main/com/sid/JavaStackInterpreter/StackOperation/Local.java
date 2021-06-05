@@ -1,9 +1,7 @@
 package main.com.sid.JavaStackInterpreter.StackOperation;
 
-import main.com.sid.JavaStackInterpreter.Exceptions.InvalidStackStateException;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 
-import java.util.List;
 
 public class Local extends StackOperation {
 
