@@ -7,8 +7,8 @@ import java.util.*;
 //map that keeps track of latest value of a variable
 //stack of sets that keep track of all variables in a current level
 public class StackBasedVariableTracker implements VariableTracker {
-    Map<String, Stack<Integer>> context;
-    Stack<Set<String>> variableStack;
+    private Map<String, Stack<Integer>> context;
+    private Stack<Set<String>> variableStack;
     public StackBasedVariableTracker(){
         context = new HashMap<>();
         variableStack = new Stack<>();

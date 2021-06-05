@@ -6,9 +6,10 @@ import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 
 import java.util.List;
 
-public class Times implements IntrinsicOperation {
+public class Times extends IntrinsicOperation {
+
     @Override
-    public void execute(StackContext st, List params) {
+    public void execute(StackContext st) {
         if(st.size() < 2){
             throw new InvalidStackStateException("Stack size is less than 2");
         }

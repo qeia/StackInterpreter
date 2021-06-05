@@ -4,9 +4,9 @@ import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 
 import java.util.List;
 
-public class PrintLn implements IntrinsicOperation {
+public class PrintLn extends IntrinsicOperation {
     @Override
-    public void execute(StackContext st, List params) {
+    public void execute(StackContext st) {
         System.out.println(st.peek());
     }
 

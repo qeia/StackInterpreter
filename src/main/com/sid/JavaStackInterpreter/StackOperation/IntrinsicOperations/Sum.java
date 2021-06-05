@@ -3,9 +3,9 @@ package main.com.sid.JavaStackInterpreter.StackOperation.IntrinsicOperations;
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidStackStateException;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 
-import java.util.List;
-public class Sum implements IntrinsicOperation {
-  public void execute(StackContext st, List parameters){
+
+public class Sum extends IntrinsicOperation {
+  public void execute(StackContext st){
     if(st.size() < 2){
       throw new InvalidStackStateException("Stack size is less than 2");
     }
