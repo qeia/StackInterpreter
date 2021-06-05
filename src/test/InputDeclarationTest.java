@@ -1,5 +1,6 @@
 package test;
 
+
 import main.com.sid.JavaStackInterpreter.CodeBlock;
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidStackStateException;
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidTypeException;
@@ -16,6 +17,7 @@ public class InputDeclarationTest {
     private StackFunction stackFunctionToTest;
     private StackFunction twoOperations;
     private StackFunction oneOperation;
+    private StackFunction multiPlyByTwo;
 
 
     public InputDeclarationTest () {
@@ -43,6 +45,9 @@ public class InputDeclarationTest {
                 ) .compile();
         twoOperations = new InputDeclaration("a", "b").pushVar("a").pushVar("b").push(100).op(TIMES).op(MINUS).compile();
         oneOperation = new InputDeclaration("a").pushVar("a").push(10).op(GREATER_THAN).compile();
+        multiPlyByTwo = new InputDeclaration("a").pushVar("a").push(2).op(TIMES).compile();
+
+
     }
 
     @Test
@@ -69,6 +74,12 @@ public class InputDeclarationTest {
         assert(!(boolean)oneOperation.invoke(11));
         assert((int)twoOperations.invoke(5,6) == 595);
         assert((int)twoOperations.invoke(5,6) == 595);
+    }
+
+    @Test
+    public void MultiplyByTwo() {
+        int x = (int) new CodeBlock().push(1).op(multiPlyByTwo).op(multiPlyByTwo).op(multiPlyByTwo).compile().invoke();
+        assert(x==8);
     }
 
     @Test(expectedExceptions = VariableNotFoundException.class)
