@@ -14,6 +14,9 @@ import static main.com.sid.JavaStackInterpreter.CodeBlock.*;
 public class InputDeclarationTest {
 
     private StackFunction stackFunctionToTest;
+    private StackFunction twoOperations;
+    private StackFunction oneOperation;
+
 
     public InputDeclarationTest () {
         stackFunctionToTest = new InputDeclaration("a", "b", "c") // example input: 1, 2, 4
@@ -38,6 +41,8 @@ public class InputDeclarationTest {
                                 .pushVar("v1", "v2") // 3, 8
                                 .op(TIMES) // 24
                 ) .compile();
+        twoOperations = new InputDeclaration("a", "b").pushVar("a").pushVar("b").push(100).op(TIMES).op(MINUS).compile();
+        oneOperation = new InputDeclaration("a").pushVar("a").push(10).op(GREATER_THAN).compile();
     }
 
     @Test
@@ -53,13 +58,17 @@ public class InputDeclarationTest {
                 new CodeBlock().push("True").push(1,2,3,4).op(TIMES),
                 new CodeBlock().push("False").push(10,10).op(TIMES)
         ).compile();
-        assert(100 == (int)foo.invoke(1,2,3));
+        assert(12 == (int)foo.invoke(1,2,3));
     }
 
     @Test
     public void TestIdempotency(){
         assert((int)stackFunctionToTest.invoke(1, 2, 4) == 24);
         assert((int)stackFunctionToTest.invoke(1, 2, 4) == 24);
+        assert((boolean)oneOperation.invoke(5));
+        assert(!(boolean)oneOperation.invoke(11));
+        assert((int)twoOperations.invoke(5,6) == 595);
+        assert((int)twoOperations.invoke(5,6) == 595);
     }
 
     @Test(expectedExceptions = VariableNotFoundException.class)

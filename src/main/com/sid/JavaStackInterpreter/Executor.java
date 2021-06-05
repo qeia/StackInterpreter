@@ -53,6 +53,7 @@ public class Executor {
           }
           //actually invoke the operation
           op.execute(stack, primitiveParams);
+          System.out.println(stack);
 
       }
       //need to remove last level of variables
