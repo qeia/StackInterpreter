@@ -3,6 +3,7 @@ package main.com.sid.JavaStackInterpreter;
 import main.com.sid.JavaStackInterpreter.Internal.OperationParameters;
 import main.com.sid.JavaStackInterpreter.Internal.OperationsDeque;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
+import main.com.sid.JavaStackInterpreter.StackOperation.IfTrue;
 import main.com.sid.JavaStackInterpreter.StackOperation.StackOperation;
 
 import java.util.*;
@@ -33,27 +34,12 @@ public class Executor {
 
           OperationParameters operationParameters = operationsDeque.pollFirst();
           StackOperation op = operationParameters.operation;
-          List params = operationParameters.params;
-          List<Object> primitiveParams = new ArrayList<>();
+          List<Object> params = operationParameters.params;
 
-          if (params != null) {
-              for (Object param : params) {
-                  if (param instanceof OperationsDeque) {
-                      //adding next level of variable maps
-
-                      //recursion in case we get a codeblock rather than a primitive[
-                      Object primitiveParam = new Executor(new StackContext(stack),
-                              (OperationsDeque)param).invoke();
-                      primitiveParams.add(primitiveParam);
-                  } else  {
-                      primitiveParams.add(param);
-                  }
-              }
-          }
           //actually invoke the operation
-          op.execute(stack, primitiveParams);
-
+          op.executeOnStack(stack, params);
       }
+
       //need to remove last level of variables
       //so that next iteration these variables wont be used
       stack.removeCurrentLevel();
@@ -62,5 +48,24 @@ public class Executor {
       }
 
       return stack.pop();
+  }
+
+  //each param in params might be another codeblock
+  //try to execute these codeblock and get the primitive
+  public static List<Object> recursivelyExecuteOnParameters(List<Object> params, StackContext st) {
+      List<Object> primitiveParams = new ArrayList<>();
+      if (params != null) {
+          for (Object param : params) {
+              if (param instanceof OperationsDeque) {
+                  //recursion in case we get a codeblock rather than a primitive
+                  Object primitiveParam = new Executor(new StackContext(st),
+                          (OperationsDeque)param).invoke();
+                  primitiveParams.add(primitiveParam);
+              } else  {
+                  primitiveParams.add(param);
+              }
+          }
+      }
+      return primitiveParams;
   }
 }
