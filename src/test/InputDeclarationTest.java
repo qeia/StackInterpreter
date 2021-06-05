@@ -2,6 +2,7 @@ package test;
 
 import main.com.sid.JavaStackInterpreter.CodeBlock;
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidStackStateException;
+import main.com.sid.JavaStackInterpreter.Exceptions.InvalidTypeException;
 import main.com.sid.JavaStackInterpreter.Exceptions.VariableNotFoundException;
 import main.com.sid.JavaStackInterpreter.InputDeclaration;
 import main.com.sid.JavaStackInterpreter.StackFunction;
@@ -11,6 +12,33 @@ import static main.com.sid.JavaStackInterpreter.CodeBlock.*;
 
 
 public class InputDeclarationTest {
+
+    private StackFunction stackFunctionToTest;
+
+    public InputDeclarationTest () {
+        stackFunctionToTest = new InputDeclaration("a", "b", "c") // example input: 1, 2, 4
+                .pushVar("a", "b") // 1, 2
+                .op(PLUS) // 3
+                .local("v1") // 3
+                .pushVar("c", "c") // 3, 4, 4
+                .pop() // 3, 4
+                .push(2) // 3, 4, 2
+                .op(TIMES) // 3, 8
+                .local("v2") // 3, 8
+                .op(EQUAL) // false
+                .ifTrue(
+                        new CodeBlock()
+                                .push("true!!")
+                                .op(PRINTLN)
+                                .pushVar("v1", "v2")
+                                .op(MINUS),
+                        new CodeBlock()
+                                .push("false!!") // "false!!"
+                                .op(PRINTLN) //
+                                .pushVar("v1", "v2") // 3, 8
+                                .op(TIMES) // 24
+                ) .compile();
+    }
 
     @Test
     public void Test1(){
@@ -29,32 +57,8 @@ public class InputDeclarationTest {
     }
 
     @Test
-    public void givenTest(){
-        StackFunction foo =
-                new InputDeclaration("a", "b", "c") // example input: 1, 2, 4
-                        .pushVar("a", "b") // 1, 2
-                        .op(PLUS) // 3
-                        .local("v1") // 3
-                        .pushVar("c", "c") // 3, 4, 4
-                        .pop() // 3, 4
-                        .push(2) // 3, 4, 2
-                        .op(TIMES) // 3, 8
-                        .local("v2") // 3, 8
-                        .op(EQUAL) // false
-                        .ifTrue(
-                                new CodeBlock()
-                                        .push("true!!")
-                                        .op(PRINTLN)
-                                        .pushVar("v1", "v2")
-                                        .op(MINUS),
-                                new CodeBlock()
-                                        .push("false!!") // "false!!"
-                                        .op(PRINTLN) //
-                                        .pushVar("v1", "v2") // 3, 8
-                                        .op(TIMES) // 24
-                        ) .compile();
-        assert((int)foo.invoke(1, 2, 4) == 24);
-
+    public void TestIdempotency(){
+        assert((int)stackFunctionToTest.invoke(1, 2, 4) == 24);
     }
 
     @Test(expectedExceptions = VariableNotFoundException.class)
@@ -90,5 +94,23 @@ public class InputDeclarationTest {
                 ).op(TIMES)
         ).op(PLUS).compile().invoke();
         assert(x==101);
+    }
+
+    @Test
+    public void TestStackFunctionOnOP(){
+        int x = (int) new CodeBlock().push(1).local("v1").push(2).push(4).op(
+                stackFunctionToTest
+        ).compile().invoke();
+        System.out.println(x);
+        assert(x==24);
+    }
+
+    @Test(expectedExceptions = InvalidTypeException.class)
+    public void TestInvalidTypeOnUsingStackFunctionOP(){
+        int x = (int) new CodeBlock().push(1).local("v1").push(2).push("5").op(
+                stackFunctionToTest
+        ).compile().invoke();
+        System.out.println(x);
+        assert(x==24);
     }
 }
