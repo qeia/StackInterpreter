@@ -1,38 +1,37 @@
 package main.com.sid.JavaStackInterpreter;
 
 import main.com.sid.JavaStackInterpreter.Internal.OperationParameters;
-import main.com.sid.JavaStackInterpreter.Internal.OperationsDeque;
+import main.com.sid.JavaStackInterpreter.Internal.OperationsList;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
-import main.com.sid.JavaStackInterpreter.StackOperation.IfTrue;
 import main.com.sid.JavaStackInterpreter.StackOperation.StackOperation;
 
 import java.util.*;
 
-//class to invoke all operations in operationsDeque
+//class to invoke all operations in operationsList
 public class Executor {
 
     StackContext stack;
-    OperationsDeque operationsDeque;
+    OperationsList operationsList;
 
 
   //initialVariables is only used in context of main.com.sid.JavaStackInterpreter.InputDeclaration
 
-  Executor(StackContext stack, OperationsDeque operationsDeque){
+  Executor(StackContext stack, OperationsList operationsList){
       this.stack = stack;
-      this.operationsDeque = operationsDeque;
+      this.operationsList = operationsList;
       stack.addNewLevel();
   }
 
   Executor(Executor executor) {
       this.stack = executor.stack;
-      this.operationsDeque = executor.operationsDeque;
+      this.operationsList = executor.operationsList;
   }
 
   public Object invoke(){
+      int i = 0;
+      while(i < operationsList.size()){
 
-      while(!operationsDeque.isEmpty()){
-
-          OperationParameters operationParameters = operationsDeque.pollFirst();
+          OperationParameters operationParameters = operationsList.get(i++);
           StackOperation op = operationParameters.operation;
           List<Object> params = operationParameters.params;
 
@@ -56,10 +55,10 @@ public class Executor {
       List<Object> primitiveParams = new ArrayList<>();
       if (params != null) {
           for (Object param : params) {
-              if (param instanceof OperationsDeque) {
+              if (param instanceof OperationsList) {
                   //recursion in case we get a codeblock rather than a primitive
                   Object primitiveParam = new Executor(new StackContext(st),
-                          (OperationsDeque)param).invoke();
+                          (OperationsList)param).invoke();
                   primitiveParams.add(primitiveParam);
               } else  {
                   primitiveParams.add(param);

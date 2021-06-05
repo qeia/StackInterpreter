@@ -2,7 +2,7 @@ package main.com.sid.JavaStackInterpreter;
 
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidTypeException;
 import main.com.sid.JavaStackInterpreter.Internal.OperationParameters;
-import main.com.sid.JavaStackInterpreter.Internal.OperationsDeque;
+import main.com.sid.JavaStackInterpreter.Internal.OperationsList;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 import main.com.sid.JavaStackInterpreter.Internal.StackBasedVariableTracker;
 import main.com.sid.JavaStackInterpreter.StackOperation.IntrinsicOperations.*;
@@ -20,17 +20,17 @@ import java.util.stream.Collectors;
 //executor is a class that executes all the operations on "operations" recursively
 public class CodeBlock<T extends CodeBlock> {
 
-  OperationsDeque operations;
+  OperationsList operations;
   Executor executor;
 
 
   public CodeBlock(){
-    operations = new OperationsDeque();
+    operations = new OperationsList();
     executor = new Executor(new StackContext(new StackBasedVariableTracker()), operations);
 
   }
 
-  public OperationsDeque getOperations(){
+  public OperationsList getOperations(){
     return operations;
   }
 
@@ -67,37 +67,37 @@ public class CodeBlock<T extends CodeBlock> {
   }
 
   public T push (Object... params){
-    operations.addLast(new OperationParameters(PUSH, getActualParameters(params)));
+    operations.add(new OperationParameters(PUSH, getActualParameters(params)));
     return (T) this;
   }
 
   public T local (String var){
-    operations.addLast(new OperationParameters(LOCAL, Collections.singletonList(var)));
+    operations.add(new OperationParameters(LOCAL, Collections.singletonList(var)));
     return (T) this;
   }
 
   public T pop (){
-    operations.addLast(new OperationParameters(POP, null));
+    operations.add(new OperationParameters(POP, null));
     return (T) this;
   }
 
   public T ifTrue (CodeBlock ip1, CodeBlock ip2){
-    operations.addLast(new OperationParameters(IF_TRUE, Arrays.asList(ip1.getOperations(), ip2.getOperations())));
+    operations.add(new OperationParameters(IF_TRUE, Arrays.asList(ip1.getOperations(), ip2.getOperations())));
     return (T)this;
   }
 
   public T op (IntrinsicOperation operation){
-    operations.addLast(new OperationParameters(operation, null));
+    operations.add(new OperationParameters(operation, null));
     return (T) this;
   }
 
   public T op (StackFunction stackFunction){
-    operations.addLast(new OperationParameters(STACK_FUNCTION_OPERATION, Arrays.asList(stackFunction)));
+    operations.add(new OperationParameters(STACK_FUNCTION_OPERATION, Arrays.asList(stackFunction)));
     return (T) this;
   }
 
   public T pushVar (String... vars){
-    operations.addLast(new OperationParameters(PUSH_VAR, Arrays.asList(vars)));
+    operations.add(new OperationParameters(PUSH_VAR, Arrays.asList(vars)));
     return (T) this;
   }
 
