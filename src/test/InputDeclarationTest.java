@@ -59,6 +59,7 @@ public class InputDeclarationTest {
     @Test
     public void TestIdempotency(){
         assert((int)stackFunctionToTest.invoke(1, 2, 4) == 24);
+        assert((int)stackFunctionToTest.invoke(1, 2, 4) == 24);
     }
 
     @Test(expectedExceptions = VariableNotFoundException.class)
