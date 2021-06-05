@@ -5,8 +5,6 @@ import main.com.sid.JavaStackInterpreter.Exceptions.InvalidTypeException;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 import main.com.sid.JavaStackInterpreter.StackFunction;
 
-import java.util.List;
-
 public class StackFunctionOperation extends IntrinsicOperation{
 
     private StackFunction stackFunction;

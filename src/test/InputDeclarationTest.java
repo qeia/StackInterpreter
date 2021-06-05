@@ -144,9 +144,9 @@ public class InputDeclarationTest {
                         new CodeBlock().push(5).pushVar("v2").op(TIMES),
                         new CodeBlock().pushVar("v1").pushVar("v1").op(TIMES)
                 )
-        ).op(MINUS).op(PLUS).op(PLUS).compile();
+        ).op(PRINTLN).op(MINUS).op(PLUS).op(PLUS).compile();
 
-        assert( (int)foo.invoke(2,1) == 5);
+        assert((int)foo.invoke(2,1) == 5);
 
     }
 }
