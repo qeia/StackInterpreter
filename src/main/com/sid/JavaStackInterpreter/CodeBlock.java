@@ -48,6 +48,7 @@ public class CodeBlock<T extends CodeBlock> {
   public static IntrinsicOperation GREATER_THAN = new GreaterThan();
   public static IntrinsicOperation STR = new ToString();
   public static StackOperation POP = new Pop();
+  private static StackFunctionOperation STACK_FUNCTION_OPERATION = new StackFunctionOperation();
 
 
   private Object getActualParameter(Object object) {
@@ -87,6 +88,11 @@ public class CodeBlock<T extends CodeBlock> {
 
   public T op (IntrinsicOperation operation){
     operations.addLast(new OperationParameters(operation, null));
+    return (T) this;
+  }
+
+  public T op (StackFunction stackFunction){
+    operations.addLast(new OperationParameters(STACK_FUNCTION_OPERATION, Arrays.asList(stackFunction)));
     return (T) this;
   }
 

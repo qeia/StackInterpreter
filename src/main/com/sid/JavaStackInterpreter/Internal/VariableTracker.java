@@ -10,4 +10,6 @@ public interface VariableTracker {
      void addVariable (String var, Integer value);
 
      void removeCurrentLevel ();
+
+     void clear();
 }

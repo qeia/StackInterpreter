@@ -32,6 +32,9 @@ public class StackContext extends Stack<Object> {
         variableTracker.removeCurrentLevel();
     }
 
+    public void clear(){
+        super.clear(); variableTracker.clear();
+    }
 
     public String toString() {
         return "[ SC " + super.toString() + " variableTracker: " + variableTracker.toString() + " ]";
