@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Stack;
 
 //contains the variable context and stack values
-public class StackContext extends Stack<Object> {
+public class StackContext extends Stack<Object> implements VariableTrackerInterface {
 
     private VariableContext variableContext;
 
