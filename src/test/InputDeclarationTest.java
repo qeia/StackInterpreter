@@ -21,9 +21,11 @@ public class InputDeclarationTest {
                         .pushVar("v1","v1","v1")
                         .push(2).
                         op(PLUS).op(PLUS)
-        ).local("v2").pushVar("v2").op(TIMES).op(EQUAL).compile();
-        foo.invoke(1,2,3);
-
+        ).op(PRINTLN).local("v2").pushVar("v2").op(TIMES).op(GREATER_THAN).ifTrue(
+                new CodeBlock().push("True").push(1,2,3,4).op(TIMES),
+                new CodeBlock().push("False").push(10,10).op(TIMES)
+        ).compile();
+        assert(100 == (int)foo.invoke(1,2,3));
     }
 
     @Test
