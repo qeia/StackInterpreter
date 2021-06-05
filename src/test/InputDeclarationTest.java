@@ -14,10 +14,14 @@ public class InputDeclarationTest {
 
     @Test
     public void Test1(){
-
         StackFunction foo = new InputDeclaration("a","b","c").push(1).push(15).push(
-                new CodeBlock().push(1).local("v1").pushVar("v1","v1","v1").push(2).
-                        op(PLUS).op(PLUS)).local("v2").pushVar("v2").op(TIMES).op(EQUAL).compile();
+                new CodeBlock()
+                        .push(1)
+                        .local("v1")
+                        .pushVar("v1","v1","v1")
+                        .push(2).
+                        op(PLUS).op(PLUS)
+        ).local("v2").pushVar("v2").op(TIMES).op(EQUAL).compile();
         foo.invoke(1,2,3);
 
     }
@@ -47,7 +51,8 @@ public class InputDeclarationTest {
                                         .pushVar("v1", "v2") // 3, 8
                                         .op(TIMES) // 24
                         ) .compile();
-        foo.invoke(1, 2, 4);
+        assert((int)foo.invoke(1, 2, 4) == 24);
+
     }
 
     @Test(expectedExceptions = VariableNotFoundException.class)
@@ -65,4 +70,23 @@ public class InputDeclarationTest {
 
     }
 
+    @Test
+    public void TestThreeLevels(){
+        int x = (int)new CodeBlock().push(1).local("v1").push(2).local("v2").push(
+                new CodeBlock().push(5).local("v2").push(
+                        new CodeBlock().push(3).push(2).op(TIMES)
+                ).pushVar("v2").op(PLUS).op(TIMES)
+        ).op(TIMES).op(MINUS).pushVar("v2").op(PLUS).compile().invoke();
+        assert(x==111);
+    }
+
+    @Test
+    public void TestShadowing(){
+        int x = (int) new CodeBlock().push(1).local("v1").push(
+                new CodeBlock().push(5).local("v1").push(
+                        new CodeBlock().pushVar("v1").push(15).op(PLUS)
+                ).op(TIMES)
+        ).op(PLUS).compile().invoke();
+        assert(x==101);
+    }
 }

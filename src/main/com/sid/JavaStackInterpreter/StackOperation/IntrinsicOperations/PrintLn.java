@@ -9,4 +9,8 @@ public class PrintLn implements IntrinsicOperation {
     public void execute(StackContext st, List params) {
         System.out.println(st.peek());
     }
+
+    public String toString(){
+        return "PrintLN";
+    }
 }

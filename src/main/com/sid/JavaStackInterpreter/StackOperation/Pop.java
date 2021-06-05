@@ -14,5 +14,7 @@ public class Pop implements StackOperation {
         }
         st.pop();
     }
-
+    public String toString(){
+        return "Pop";
+    }
 }

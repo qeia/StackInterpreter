@@ -1,4 +1,4 @@
-package main.com.sid.JavaStackInterpreter.StackOperation.IntrinsicOperations;
+package main.com.sid.JavaStackInterpreter.StackOperation;
 
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidStackStateException;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
