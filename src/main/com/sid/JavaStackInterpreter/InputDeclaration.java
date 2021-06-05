@@ -7,7 +7,7 @@ import java.util.List;
 //simply a codeblock but we can instantiate some variables initially
 public class InputDeclaration extends CodeBlock<InputDeclaration> {
 
-    //when main.com.sid.JavaStackInterpreter.InputDeclaration is used
+    //when InputDeclaration is used rather than codeblock
     private List<String> initialVariables;
 
     public InputDeclaration(String... vars){

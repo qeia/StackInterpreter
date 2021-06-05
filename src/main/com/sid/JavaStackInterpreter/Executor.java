@@ -14,7 +14,6 @@ public class Executor {
     OperationsList operationsList;
 
 
-  //initialVariables is only used in context of main.com.sid.JavaStackInterpreter.InputDeclaration
 
   Executor(StackContext stack, OperationsList operationsList){
       this.stack = stack;

@@ -1,5 +1,4 @@
 package main.com.sid.JavaStackInterpreter;
-import main.com.sid.JavaStackInterpreter.Internal.OperationsList;
 
 import java.util.List;
 
