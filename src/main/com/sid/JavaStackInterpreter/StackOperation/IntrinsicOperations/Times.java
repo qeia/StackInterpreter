@@ -20,4 +20,7 @@ public class Times implements IntrinsicOperation {
 
         st.push((int)pm1 * (int)pm2);
     }
+    public String toString(){
+        return "Times";
+    }
 }

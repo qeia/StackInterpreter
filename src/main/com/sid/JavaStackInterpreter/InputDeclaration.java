@@ -1,17 +1,22 @@
 package main.com.sid.JavaStackInterpreter;
 
-import main.com.sid.JavaStackInterpreter.Internal.OperationsDeque;
-import main.com.sid.JavaStackInterpreter.Internal.StackContext;
-import main.com.sid.JavaStackInterpreter.Internal.VariableContext;
 
 import java.util.Arrays;
+import java.util.List;
 
-//simply a codeblock but we can instantiate some variables
-public class InputDeclaration extends CodeBlock {
+//simply a codeblock but we can instantiate some variables initially
+public class InputDeclaration extends CodeBlock<InputDeclaration> {
+
+    //when main.com.sid.JavaStackInterpreter.InputDeclaration is used
+    private List<String> initialVariables;
 
     public InputDeclaration(String... vars){
-        operations = new OperationsDeque();
-        executor = new StackFunction(new StackContext(new VariableContext()), operations, Arrays.asList(vars));
+        super();
+        this.initialVariables = Arrays.asList(vars);
+    }
 
+    @Override
+    public StackFunction compile(){
+        return new StackFunction(executor, initialVariables);
     }
 }

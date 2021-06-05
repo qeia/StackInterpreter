@@ -10,6 +10,7 @@ import main.com.sid.JavaStackInterpreter.StackOperation.*;
 import main.com.sid.JavaStackInterpreter.StackOperation.StackOperation;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,15 +18,15 @@ import java.util.stream.Collectors;
 //fluent api
 //operations is a deque that contains tuples of operations vs params
 //executor is a class that executes all the operations on "operations" recursively
-public class CodeBlock {
+public class CodeBlock<T extends CodeBlock> {
 
   OperationsDeque operations;
-  StackFunction executor;
+  Executor executor;
 
 
   public CodeBlock(){
     operations = new OperationsDeque();
-    executor = new StackFunction(new StackContext(new VariableContext()), operations, null);
+    executor = new Executor(new StackContext(new VariableContext()), operations);
 
   }
 
@@ -52,7 +53,7 @@ public class CodeBlock {
 
     if (object instanceof CodeBlock){
       return ((CodeBlock)object).getOperations();
-    } else if (object instanceof Integer || object instanceof String){
+    } else if (object instanceof Integer || object instanceof String) {
       return object;
     }
     throw new InvalidTypeException("Can not parse " + object);
@@ -63,37 +64,37 @@ public class CodeBlock {
     return Arrays.stream(objects).map(this::getActualParameter).collect(Collectors.toList());
   }
 
-  public CodeBlock push (Object... params){
+  public T push (Object... params){
     operations.addLast(new OperationParameters(PUSH, getActualParameters(params)));
-    return this;
+    return (T) this;
   }
 
-  public CodeBlock local (String var){
-    operations.addLast(new OperationParameters(LOCAL, getActualParameters(var)));
-    return this;
+  public T local (String var){
+    operations.addLast(new OperationParameters(LOCAL, Collections.singletonList(var)));
+    return (T) this;
   }
 
-  public CodeBlock pop (){
+  public T pop (){
     operations.addLast(new OperationParameters(POP, null));
-    return this;
+    return (T) this;
   }
 
-  public CodeBlock ifTrue (CodeBlock ip1, CodeBlock ip2){
+  public T ifTrue (CodeBlock ip1, CodeBlock ip2){
     operations.addLast(new OperationParameters(IF_TRUE, Arrays.asList(ip1.getOperations(), ip2.getOperations())));
-    return this;
+    return (T)this;
   }
 
-  public CodeBlock op (IntrinsicOperation operation){
+  public T op (IntrinsicOperation operation){
     operations.addLast(new OperationParameters(operation, null));
-    return this;
+    return (T) this;
   }
 
-  public CodeBlock pushVar (String... vars){
+  public T pushVar (String... vars){
     operations.addLast(new OperationParameters(PUSH_VAR, Arrays.asList(vars)));
-    return this;
+    return (T) this;
   }
 
-  public StackFunction compile(){
+  public Executor compile(){
       return executor;
   }
 

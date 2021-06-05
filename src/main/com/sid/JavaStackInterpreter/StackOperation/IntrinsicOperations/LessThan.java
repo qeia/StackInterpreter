@@ -17,6 +17,10 @@ public class LessThan implements IntrinsicOperation{
             throw new InvalidStackStateException("Can not convert stack value to Integer");
         }
 
-        st.push((int)pm1 > (int)pm2);
+        st.push((int)pm2 > (int)pm1);
+    }
+
+    public String toString(){
+        return "LessThan";
     }
 }

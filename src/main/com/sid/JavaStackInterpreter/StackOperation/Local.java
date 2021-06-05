@@ -12,7 +12,7 @@ public class Local implements StackOperation {
         if (params.size()>1 || (!(params.get(0) instanceof String))){
             throw new InvalidStackStateException("Invalid use of local");
         }
-        st.putVariableInMap((String)params.get(0), (int) st.peek());
+        st.addVariable((String)params.get(0), (int) st.peek());
     }
     public String toString(){
         return "Local";

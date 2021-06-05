@@ -7,32 +7,30 @@ import main.com.sid.JavaStackInterpreter.StackOperation.StackOperation;
 
 import java.util.*;
 
-//class to execute all operations in operationsDeque
-class Executor {
+//class to invoke all operations in operationsDeque
+public class Executor {
 
-  private StackContext stack;
-  private OperationsDeque operationsDeque;
+    StackContext stack;
+    OperationsDeque operationsDeque;
 
-  //when main.com.sid.JavaStackInterpreter.InputDeclaration is used
-  List<String> initialVariables;
 
   //initialVariables is only used in context of main.com.sid.JavaStackInterpreter.InputDeclaration
-  Executor(StackContext stack, OperationsDeque operationsDeque, List<String> initialVariables){
+
+  Executor(StackContext stack, OperationsDeque operationsDeque){
       this.stack = stack;
       this.operationsDeque = operationsDeque;
-      this.initialVariables = initialVariables;
-  }
-  void putValuesIntoMap(Map<String, Integer> initialVariables){
-
-      stack.getLastMap().putAll(initialVariables);
+      stack.addNewLevel();
   }
 
-  Object execute(){
+  Executor(Executor executor) {
+      this.stack = executor.stack;
+      this.operationsDeque = executor.operationsDeque;
+  }
+
+  public Object invoke(){
       System.out.println("Executing a new"+ " "+ operationsDeque.toString());
 
       while(!operationsDeque.isEmpty()){
-
-          System.out.println("Remaining Operations: " + operationsDeque);
 
           OperationParameters operationParameters = operationsDeque.pollFirst();
           StackOperation op = operationParameters.operation;
@@ -43,24 +41,23 @@ class Executor {
               for (Object param : params) {
                   if (param instanceof OperationsDeque) {
                       //adding next level of variable maps
-                      stack.addNewLevel();
+
                       //recursion in case we get a codeblock rather than a primitive
-                      Object primitiveParam = new Executor(new StackContext(stack.getVariableContext()),
-                              (OperationsDeque)param, null).execute();
+                      Object primitiveParam = new Executor(new StackContext(stack),
+                              (OperationsDeque)param).invoke();
                       primitiveParams.add(primitiveParam);
                   } else  {
                       primitiveParams.add(param);
                   }
               }
           }
-          //actually execute the operation
+          //actually invoke the operation
           op.execute(stack, primitiveParams);
-          System.out.println("Stack currently: " + stack);
 
       }
       //need to remove last level of variables
       //so that next iteration these variables wont be used
-      stack.removeLastMap();
+      stack.removeCurrentLevel();
       if(stack.isEmpty()){
         return null;
       }

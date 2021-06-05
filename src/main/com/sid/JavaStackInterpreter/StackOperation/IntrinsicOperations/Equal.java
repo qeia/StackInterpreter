@@ -18,4 +18,7 @@ public class Equal implements IntrinsicOperation {
         Object pm2 = st.pop();
         st.push(Objects.equals(pm1,pm2));
     }
+    public String toString(){
+        return "Equal";
+    }
 }

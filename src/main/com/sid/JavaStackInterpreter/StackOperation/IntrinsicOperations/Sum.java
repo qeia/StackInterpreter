@@ -12,7 +12,7 @@ public class Sum implements IntrinsicOperation {
     Object pm1 = st.pop();
     Object pm2 = st.pop();
     if (!(pm2 instanceof Integer) || !(pm1 instanceof Integer)){
-      throw new InvalidStackStateException("Can not convert stack value to Integer");
+      throw new InvalidStackStateException("Can not convert stack value to Integer " + pm1 + " " + pm2);
     }
     st.push(((int)pm1 + (int)pm2));
 

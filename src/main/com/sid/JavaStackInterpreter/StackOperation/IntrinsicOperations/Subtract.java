@@ -17,6 +17,9 @@ public class Subtract implements IntrinsicOperation {
         if (!(pm2 instanceof Integer) || !(pm1 instanceof Integer)){
             throw new InvalidStackStateException("Can not convert stack value to Integer");
         }
-        st.push(((int)pm2 - (int)pm1));
+        st.push(((int)pm1 - (int)pm2));
+    }
+    public String toString(){
+        return "Subtract";
     }
 }

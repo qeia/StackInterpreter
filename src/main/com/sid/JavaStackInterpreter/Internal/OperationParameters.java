@@ -12,6 +12,7 @@ public class OperationParameters {
         this.operation = operation;
         this.params = params;
     }
+
     @Override
     public String toString(){
         String paramString = params == null ?  "null" : params.toString();
