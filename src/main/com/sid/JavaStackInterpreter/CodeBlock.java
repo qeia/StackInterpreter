@@ -1,5 +1,6 @@
 package main.com.sid.JavaStackInterpreter;
 
+import main.com.sid.JavaStackInterpreter.Exceptions.InvalidTypeException;
 import main.com.sid.JavaStackInterpreter.Internal.OperationParameters;
 import main.com.sid.JavaStackInterpreter.Internal.OperationsDeque;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
@@ -54,7 +55,7 @@ public class CodeBlock {
     } else if (object instanceof Integer || object instanceof String){
       return object;
     }
-    throw new RuntimeException();
+    throw new InvalidTypeException("Can not parse " + object);
 
   }
 

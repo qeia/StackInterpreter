@@ -47,7 +47,8 @@ public class InputDeclarationTest {
                                         .pushVar("v1", "v2") // 3, 8
                                         .op(TIMES) // 24
                         ) .compile();
-        foo.invoke(1, 2, 4);
+        assert((int)foo.invoke(1, 2, 4) == 24);
+
     }
 
     @Test(expectedExceptions = VariableNotFoundException.class)
