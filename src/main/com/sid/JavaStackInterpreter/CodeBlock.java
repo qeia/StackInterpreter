@@ -4,7 +4,7 @@ import main.com.sid.JavaStackInterpreter.Exceptions.InvalidTypeException;
 import main.com.sid.JavaStackInterpreter.Internal.OperationParameters;
 import main.com.sid.JavaStackInterpreter.Internal.OperationsDeque;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
-import main.com.sid.JavaStackInterpreter.Internal.VariableContext;
+import main.com.sid.JavaStackInterpreter.Internal.StackBasedVariableTracker;
 import main.com.sid.JavaStackInterpreter.StackOperation.IntrinsicOperations.*;
 import main.com.sid.JavaStackInterpreter.StackOperation.*;
 import main.com.sid.JavaStackInterpreter.StackOperation.StackOperation;
@@ -26,7 +26,7 @@ public class CodeBlock<T extends CodeBlock> {
 
   public CodeBlock(){
     operations = new OperationsDeque();
-    executor = new Executor(new StackContext(new VariableContext()), operations);
+    executor = new Executor(new StackContext(new StackBasedVariableTracker()), operations);
 
   }
 
@@ -46,6 +46,7 @@ public class CodeBlock<T extends CodeBlock> {
   public static IntrinsicOperation DIVIDE = new Divide();
   public static IntrinsicOperation LESS_THAN = new LessThan();
   public static IntrinsicOperation GREATER_THAN = new GreaterThan();
+  public static IntrinsicOperation STR = new ToString();
   public static StackOperation POP = new Pop();
 
 
