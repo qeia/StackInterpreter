@@ -133,4 +133,20 @@ public class InputDeclarationTest {
         ).op(PRINTLN).compile().invoke();
         assert(x==24);
     }
+
+    @Test
+    public void TestCombination1 () {
+        StackFunction foo = new InputDeclaration("v1", "v2").push(1).pushVar("v1").push(
+                new CodeBlock().push(3).local("v1").pushVar("v1").op(TIMES)
+        ).pushVar("v1").op(TIMES).push(
+                new CodeBlock().push(4).local("v2").push(5).push(6).op(MINUS).
+                        op(multiPlyByTwo).op(multiPlyByTwo).op(MINUS).push(0).op(EQUAL).ifTrue(
+                        new CodeBlock().push(5).pushVar("v2").op(TIMES),
+                        new CodeBlock().pushVar("v1").pushVar("v1").op(TIMES)
+                )
+        ).op(MINUS).op(PLUS).op(PLUS).compile();
+
+        assert( (int)foo.invoke(2,1) == 5);
+
+    }
 }
