@@ -7,12 +7,16 @@ import main.com.sid.JavaStackInterpreter.StackFunction;
 
 import java.util.List;
 
-public class StackFunctionOperation implements IntrinsicOperation{
+public class StackFunctionOperation extends IntrinsicOperation{
+
+    private StackFunction stackFunction;
+    public StackFunctionOperation(StackFunction stackFunction){
+        this.stackFunction = stackFunction;
+    }
 
     @Override
-    public void execute(StackContext st, List params) {
+    public void execute(StackContext st) {
 
-        StackFunction stackFunction = (StackFunction) params.get(0);
         int size = stackFunction.getVariableLength();
 
         Integer[] parametersInStackFunction = new Integer[size];

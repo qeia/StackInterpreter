@@ -1,7 +1,6 @@
 package main.com.sid.JavaStackInterpreter;
 
 import main.com.sid.JavaStackInterpreter.Exceptions.InvalidTypeException;
-import main.com.sid.JavaStackInterpreter.Internal.OperationParameters;
 import main.com.sid.JavaStackInterpreter.Internal.OperationsList;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 import main.com.sid.JavaStackInterpreter.Internal.StackBasedVariableTracker;
@@ -10,7 +9,6 @@ import main.com.sid.JavaStackInterpreter.StackOperation.*;
 import main.com.sid.JavaStackInterpreter.StackOperation.StackOperation;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -34,11 +32,7 @@ public class CodeBlock<T extends CodeBlock> {
     return operations;
   }
 
-  public static StackOperation PUSH = new Push();
-  public static IntrinsicOperation PLUS = new Sum();
-  public static StackOperation LOCAL = new Local();
-  public static StackOperation IF_TRUE = new IfTrue();
-  public static StackOperation PUSH_VAR = new PushVar();
+
   public static IntrinsicOperation EQUAL = new Equal();
   public static IntrinsicOperation MINUS = new Subtract();
   public static IntrinsicOperation PRINTLN = new PrintLn();
@@ -47,8 +41,9 @@ public class CodeBlock<T extends CodeBlock> {
   public static IntrinsicOperation LESS_THAN = new LessThan();
   public static IntrinsicOperation GREATER_THAN = new GreaterThan();
   public static IntrinsicOperation STR = new ToString();
+  public static IntrinsicOperation PLUS = new Sum();
   public static StackOperation POP = new Pop();
-  private static StackFunctionOperation STACK_FUNCTION_OPERATION = new StackFunctionOperation();
+
 
 
   private Object getActualParameter(Object object) {
@@ -67,37 +62,37 @@ public class CodeBlock<T extends CodeBlock> {
   }
 
   public T push (Object... params){
-    operations.add(new OperationParameters(PUSH, getActualParameters(params)));
+    operations.add(new Push(getActualParameters(params)));
     return (T) this;
   }
 
   public T local (String var){
-    operations.add(new OperationParameters(LOCAL, Collections.singletonList(var)));
+    operations.add(new Local(var));
     return (T) this;
   }
 
   public T pop (){
-    operations.add(new OperationParameters(POP, null));
+    operations.add(new Pop());
     return (T) this;
   }
 
   public T ifTrue (CodeBlock ip1, CodeBlock ip2){
-    operations.add(new OperationParameters(IF_TRUE, Arrays.asList(ip1.getOperations(), ip2.getOperations())));
+    operations.add(new IfTrue(ip1.getOperations(), ip2.getOperations()));
     return (T)this;
   }
 
   public T op (IntrinsicOperation operation){
-    operations.add(new OperationParameters(operation, null));
+    operations.add(operation);
     return (T) this;
   }
 
   public T op (StackFunction stackFunction){
-    operations.add(new OperationParameters(STACK_FUNCTION_OPERATION, Arrays.asList(stackFunction)));
+    operations.add(new StackFunctionOperation(stackFunction));
     return (T) this;
   }
 
   public T pushVar (String... vars){
-    operations.add(new OperationParameters(PUSH_VAR, Arrays.asList(vars)));
+    operations.add(new PushVar(Arrays.asList(vars)));
     return (T) this;
   }
 

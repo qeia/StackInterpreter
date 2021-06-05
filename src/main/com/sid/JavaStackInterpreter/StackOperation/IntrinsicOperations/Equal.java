@@ -7,10 +7,10 @@ import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 import java.util.List;
 import java.util.Objects;
 
-public class Equal implements IntrinsicOperation {
+public class Equal extends IntrinsicOperation {
 
     @Override
-    public void execute(StackContext st, List params) {
+    public void execute(StackContext st) {
         if(st.size() < 2){
             throw new InvalidStackStateException("Stack size is less than 2");
         }
