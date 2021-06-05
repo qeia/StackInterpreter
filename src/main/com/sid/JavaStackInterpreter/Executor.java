@@ -28,7 +28,6 @@ public class Executor {
   }
 
   public Object invoke(){
-      System.out.println("Executing a new"+ " "+ operationsDeque.toString());
 
       while(!operationsDeque.isEmpty()){
 
@@ -53,7 +52,6 @@ public class Executor {
           }
           //actually invoke the operation
           op.execute(stack, primitiveParams);
-          System.out.println(stack);
 
       }
       //need to remove last level of variables
