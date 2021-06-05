@@ -28,7 +28,6 @@ public class Executor {
   }
 
   public Object invoke(){
-      System.out.println("Executing a new"+ " "+ operationsDeque.toString());
 
       while(!operationsDeque.isEmpty()){
 
@@ -42,7 +41,7 @@ public class Executor {
                   if (param instanceof OperationsDeque) {
                       //adding next level of variable maps
 
-                      //recursion in case we get a codeblock rather than a primitive
+                      //recursion in case we get a codeblock rather than a primitive[
                       Object primitiveParam = new Executor(new StackContext(stack),
                               (OperationsDeque)param).invoke();
                       primitiveParams.add(primitiveParam);

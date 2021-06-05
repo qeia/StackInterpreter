@@ -48,6 +48,12 @@ public class StackBasedVariableTracker implements VariableTracker {
         variableStack.pop();
     }
 
+    @Override
+    public void clear() {
+        this.context.clear();
+        this.variableStack.clear();
+    }
+
     private void deleteFromStack (String variable, Map<String, Stack<Integer>> map) {
         Stack<Integer> currentStack = map.get(variable);
         currentStack.pop();
