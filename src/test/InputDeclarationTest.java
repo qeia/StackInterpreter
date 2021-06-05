@@ -130,8 +130,7 @@ public class InputDeclarationTest {
     public void TestInvalidTypeOnUsingStackFunctionOP(){
         int x = (int) new CodeBlock().push(1).local("v1").push(2).push("5").op(
                 stackFunctionToTest
-        ).compile().invoke();
-        System.out.println(x);
+        ).op(PRINTLN).compile().invoke();
         assert(x==24);
     }
 }
