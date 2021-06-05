@@ -14,20 +14,20 @@ public abstract class StackOperation {
 
     //each param in params might be another codeblock
     //try to execute these codeblock and get the primitive
-    public static List<Object> recursivelyExecuteOnParameters(List<Object> params, StackContext st) {
+    List<Object> recursivelyExecuteOnParameters(List<Object> params, StackContext st) {
         List<Object> primitiveParams = new ArrayList<>();
         if (params != null) {
             for (Object param : params) {
-                if (param instanceof OperationsList) {
-                    //recursion in case we get a codeblock rather than a primitive
-                    Object primitiveParam = new Executor(new StackContext(st),
-                            (OperationsList)param).invoke();
-                    primitiveParams.add(primitiveParam);
-                } else  {
-                    primitiveParams.add(param);
-                }
+                primitiveParams.add(invokeOnce(st, param));
             }
         }
         return primitiveParams;
+    }
+
+    Object invokeOnce(StackContext st, Object param){
+        if (param instanceof OperationsList){
+            return new Executor(new StackContext(st), (OperationsList)param).invoke();
+        }
+        return param;
     }
 }

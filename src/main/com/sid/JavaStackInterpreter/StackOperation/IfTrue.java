@@ -5,8 +5,7 @@ import main.com.sid.JavaStackInterpreter.Exceptions.InvalidStackStateException;
 import main.com.sid.JavaStackInterpreter.Internal.OperationsList;
 import main.com.sid.JavaStackInterpreter.Internal.StackContext;
 
-import java.util.Collections;
-import java.util.List;
+
 
 public class IfTrue extends StackOperation {
 
@@ -19,11 +18,6 @@ public class IfTrue extends StackOperation {
     }
 
 
-
-    private Object getLastElement(List<Object> list){
-        return list.get(list.size()-1);
-    }
-
     @Override
     public void execute(StackContext st) {
         if(st.size() < 1){
@@ -33,9 +27,10 @@ public class IfTrue extends StackOperation {
             throw new InvalidStackStateException("Last value in stack is not a boolean");
         }
         if ((boolean)st.pop()){
-            st.push(getLastElement(recursivelyExecuteOnParameters(Collections.singletonList(whenTrue), st)));
-            return;
+            st.push(invokeOnce(st, whenTrue));
+
+        } else {
+            st.push(invokeOnce(st, whenFalse));
         }
-        st.push(getLastElement(recursivelyExecuteOnParameters(Collections.singletonList(whenFalse), st)));
     }
 }

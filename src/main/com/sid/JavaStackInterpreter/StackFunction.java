@@ -6,7 +6,6 @@ public class StackFunction extends Executor {
 
     private List<String> initialVariables;
 
-
     StackFunction(Executor executor, List<String> initialVariables) {
         super(executor);
         this.initialVariables = initialVariables;
