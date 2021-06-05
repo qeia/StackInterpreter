@@ -8,7 +8,7 @@ public class StackContext extends Stack<Object> {
 
     private VariableTracker variableTracker;
 
-    public StackContext (StackBasedVariableTracker variableTracker){
+    public StackContext (VariableTracker variableTracker){
         this.variableTracker = variableTracker;
     }
 
